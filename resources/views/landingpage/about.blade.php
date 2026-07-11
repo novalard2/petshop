@@ -1,0 +1,75 @@
+@extends('layouts.landing_page')
+@section('content')
+  <!-- ABOUT SECTION -->
+<div class="about-section">
+
+  <!-- LEFT: TEXT -->
+  <div class="about-left">
+    <div class="about-title">
+      <i class="fa-solid fa-cat"></i>About
+    </div>
+    <p>
+      Selamat datang di Pet Shop kami, tempat terbaik untuk memenuhi semua kebutuhan hewan peliharaan kesayangan Anda. Kami hadir untuk membantu para pecinta hewan dalam memberikan perawatan terbaik dengan produk berkualitas dan layanan terpercaya.
+      <br>
+      Kami menyediakan berbagai kebutuhan hewan seperti makanan, aksesoris, vitamin, serta layanan grooming untuk menjaga kebersihan dan kesehatan hewan peliharaan Anda. Dengan pelayanan yang ramah dan profesional, kami selalu berusaha memberikan pengalaman terbaik bagi setiap pelanggan.
+    </p>
+  </div>
+
+  <!-- RIGHT: CARDS -->
+  <div class="cards-grid">
+
+    <div class="feature-card">
+        <div class="card-icon">
+            <i class="bi bi-check2-circle"></i>
+        </div>
+
+        <div class="card-content">
+            <h3>Produk Berkualitas Tinggi</h3>
+            <p>
+                Kami menyediakan berbagai produk berkualitas tinggi untuk memenuhi kebutuhan hewan peliharaan Anda, mulai dari makanan, aksesoris hingga perlengkapan perawatan terbaik.
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="card-icon">
+            <i class="fa-solid fa-dog"></i>
+        </div>
+
+        <div class="card-content">
+            <h3>Pelayanan Perawatan Hewan</h3>
+            <p>
+                Kami berkomitmen memberikan pelayanan terbaik dengan penuh perhatian dan kasih sayang untuk setiap hewan peliharaan Anda.
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="card-icon">
+            <i class="bi bi-heart-pulse-fill"></i>
+        </div>
+
+        <div class="card-content">
+            <h3>Layanan Kesehatan</h3>
+            <p>
+                Kami menyediakan layanan kesehatan terbaik agar hewan peliharaan Anda tetap sehat, nyaman, dan bahagia.
+            </p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <div class="card-icon">
+            <i class="bi bi-arrow-through-heart"></i>
+        </div>
+
+        <div class="card-content">
+            <h3>Perawatan Khusus</h3>
+            <p>
+                Setiap hewan memiliki kebutuhan yang berbeda sehingga kami memberikan perawatan yang disesuaikan dengan kondisi dan karakter hewan Anda.
+            </p>
+        </div>
+    </div>
+
+  </div>
+</div>
+@endsection
