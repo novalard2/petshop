@@ -152,30 +152,36 @@
 <script>
 document.querySelectorAll('form:not(.logout-form)').forEach(form => {
 
-  if(form.classList.contains('cart-form')){
-      return;
-  }
+    if(form.classList.contains('cart-form')){
+        return;
+    }
 
-  form.addEventListener('submit', function(){
+    form.addEventListener('submit', function(){
 
-      const btn = form.querySelector('button[type="submit"]');
-      if(!btn) return;
+        const btn = form.querySelector('button[type="submit"]');
+        if(!btn) return;
 
-      btn.disabled = true;
+        btn.disabled = true;
 
-      // Tambah / Kurang Qty
-      if(form.classList.contains('qty-form')){
-          btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
-      }
+        // Qty Cart
+        if(form.classList.contains('qty-form')){
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+        }
 
-      else{
-          btn.innerHTML = `
-              <span class="spinner"></span>
-              Memproses...
-          `;
-      }
+        // Search
+        else if(form.classList.contains('search-form')){
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+        }
 
-  });
+        // Form lainnya
+        else{
+            btn.innerHTML = `
+                <span class="spinner"></span>
+                Memproses...
+            `;
+        }
+
+    });
 
 });
 </script>

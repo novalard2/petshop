@@ -33,9 +33,14 @@ class FrontendController extends Controller
                   });
             });
         })
-        ->get();
-
-    return view('landingpage.store', compact('products'));
+        ->paginate(12);
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('landingpage.partials.product-card', compact('products'))->render(),
+                'hasMore' => $products->hasMorePages(),
+            ]);
+        }
+         return view('landingpage.store', compact('products', 'search'));
     }
 
     public function service()

@@ -80,12 +80,16 @@ class AuthController extends Controller
     {
         return view('auth.register');
     }
+
     public function register(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8|confirmed',
+        ],[
+            'email.unique' => 'email sudah digunakan',
+            'password.confirmed' => 'Konfirmasi password tidak sesuai.',
         ]);
 
         $user = User::create([

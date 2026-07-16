@@ -17,8 +17,11 @@ class UserController extends Controller
     {
         $validate = $request->validate([
             'name' => 'required',
-            'no_hp' => 'required|regex:/^[0-9]+$/|min:10|max:15',
+            'no_hp' => 'required|regex:/^[0-9]{9,14}$/|min:10|max:15',
             'alamat' => 'required',
+        ],[
+            'no_hp.required' => 'Nomor handphone wajib diisi.',
+            'no_hp.regex' => 'Nomor handphone harus diawali angka 0 dan terdiri dari 10-15 digit.',
         ]);
 
         Auth::user()->update($validate);

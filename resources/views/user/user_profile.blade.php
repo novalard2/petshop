@@ -48,7 +48,13 @@
                     pattern="[0-9]+"
                     oninput="this.value=this.value.replace(/[^0-9]/g,'')"
                     maxlength="15"
+                    minlength="10"
                     required>
+                    @error('no_hp')
+                            <div style="color:red; font-size:14px; margin-top:5px;">
+                                {{ $message }}
+                            </div>
+                    @enderror
             </div>
 
             <div class="form-group">

@@ -8,7 +8,7 @@
                 <div class="row align-items-center">
                     <div class="col-7">
                         <i class="mdi mdi-emoticon font-20 text-info"></i>
-                        <p class="font-16 m-b-5">ALL USERS</p>
+                        <p class="font-16 m-b-5">USERS</p>
                     </div>
                     <div class="col-5">
                         <h1 class="font-light text-right mb-0">{{ $totalUsers }}</h1>
@@ -23,7 +23,7 @@
                 <div class="row align-items-center">
                     <div class="col-7">
                         <i class="mdi mdi-image font-20 text-success"></i>
-                        <p class="font-16 m-b-5">ALL PRODUCT</p>
+                        <p class="font-16 m-b-5">PRODUCT</p>
                     </div>
                     <div class="col-5">
                         <h1 class="font-light text-right mb-0">{{ $totalProducts }}</h1>
@@ -38,7 +38,7 @@
                 <div class="row align-items-center">
                     <div class="col-7">
                         <i class="mdi mdi-currency-eur font-20 text-purple"></i>
-                        <p class="font-16 m-b-5">ALL ORDERS</p>
+                        <p class="font-16 m-b-5">ORDERS</p>
                     </div>
                     <div class="col-5">
                         <h1 class="font-light text-right mb-0">{{ $totalOrders }}</h1>
@@ -53,7 +53,7 @@
                 <div class="row align-items-center">
                     <div class="col-7">
                         <i class="mdi mdi-poll font-20 text-danger"></i>
-                        <p class="font-16 m-b-5">ALL ANIMALS</p>
+                        <p class="font-16 m-b-5">ANIMALS</p>
                     </div>
                     <div class="col-5">
                         <h1 class="font-light text-right mb-0">{{ $totalAnimals }}</h1>
@@ -62,7 +62,7 @@
             </div>
         </div>                        
     </div>
-{{-- </div>
+</div>
 <!-- ============================================================== -->
 <!-- Sales chart -->
 <!-- ============================================================== -->
@@ -70,7 +70,7 @@
 <!-- Email campaign chart -->
 <!-- ============================================================== -->
 <div class="row">
-    <div class="col-lg-8 col-md-12">
+    {{-- <div class="col-lg-8 col-md-12">
         <div class="card">
             <div class="card-body">
                 <div class="d-flex align-items-center">
@@ -95,51 +95,49 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="col-lg-4 col-md-12">
-        <div class="card bg-info">
-            <div class="card-body mb-0">
-                <h4 class="card-title text-white">Thursday <span class="font-14 font-normal text-white op-5">12th April, 2018</span></h4>
-                    <div class="d-flex align-items-center flex-row m-t-30">
-                    <h1 class="font-light text-white"><i class="wi wi-day-sleet"></i> <span>35<sup>°</sup></span></h1>
-                </div>
-            </div>
-            <div class="weather-report" style="height:78px; width:100%;"></div>
-        </div>
+    </div> --}}
+    <div class="col-lg-4">
         <div class="card bg-success">
             <div class="card-body">
-                <div class="d-flex align-items-center">
-                    <div>
-                        <h4 class="card-title text-white">Users</h4>
-                    </div>
-                    <div class="ml-auto">
-                        <h2 class="font-light text-white">35,658</h2>
-                    </div>
-                </div>
-                <div class="m-t-20 m-b-10">
-                    <ul class="list-style-none m-t-10">
-                        <li>
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <h4 class="mb-0 font-medium text-white">58% <span class="font-normal font-14 text-white op-5 m-l-5">New Users</span></h4>
-                                </div>
-                            </div>
-                            <div class="progress m-t-10 user-progress-bg">
-                                <div class="progress-bar bg-white" role="progressbar" style="width: 58%" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                        <li class="m-t-30">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <h4 class="mb-0 font-medium text-white">16% <span class="font-normal font-14 text-white op-5 m-l-5">Repeat Users</span></h4>
-                                </div>
-                            </div>
-                            <div class="progress m-t-10 user-progress-bg">
-                                <div class="progress-bar bg-white" role="progressbar" style="width: 16%" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+
+                <h4 class="text-white">
+                    Pendapatan Minggu Ini
+                </h4>
+
+                <h2 class="text-white income-value">
+                    Rp {{ number_format($weeklyIncome,0,',','.') }}
+                </h2>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-info">
+            <div class="card-body">
+
+                <h4 class="text-white">
+                    Pendapatan Bulan Ini
+                </h4>
+
+                <h2 class="text-white income-value">
+                    Rp {{ number_format($monthlyIncome,0,',','.') }}
+                </h2>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-primary">
+            <div class="card-body">
+
+                <h4 class="text-white">
+                    Pendapatan Tahun Ini
+                </h4>
+
+                <h2 class="text-white income-value">
+                    Rp {{ number_format($yearlyIncome,0,',','.') }}
+                </h2>
+
             </div>
         </div>
     </div>
@@ -154,24 +152,28 @@
     <div class="col-sm-12 col-lg-4">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Campaign Status</h4>
+                <h4 class="card-title">Orders Status</h4>
                 <div class="status m-t-30" style="height:280px; width:100%"></div>
-            
-                <div class="row">
-                    <div class="col-4 border-right">
-                        <i class="fa fa-circle text-primary"></i>
-                        <h4 class="mb-0 font-medium">5489</h4>
-                        <span>Success</span>
+                <div class="d-flex text-center mt-3 order-status-wrapper">
+                    <div class="order-status-item">
+                        <i class="fa fa-circle text-success"></i>
+                        <h4 class="mb-1 font-medium">{{ $paidOrders }}</h4>
+                        <span>Paid</span>
                     </div>
-                    <div class="col-4 border-right p-l-20">
-                        <i class="fa fa-circle text-info"></i>
-                        <h4 class="mb-0 font-medium">954</h4>
+                    <div class="order-status-item">
+                        <i class="fa fa-circle text-warning"></i>
+                        <h4 class="mb-1 font-medium">{{ $pendingOrders }}</h4>
                         <span>Pending</span>
                     </div>
-                    <div class="col-4 p-l-20">
-                        <i class="fa fa-circle text-success"></i>
-                        <h4 class="mb-0 font-medium">736</h4>
+                    <div class="order-status-item">
+                        <i class="fa fa-circle text-danger"></i>
+                        <h4 class="mb-1 font-medium">{{ $failedOrders }}</h4>
                         <span>Failed</span>
+                    </div>
+                    <div class="order-status-item">
+                        <i class="fa fa-circle text-secondary"></i>
+                        <h4 class="mb-1 font-medium">{{ $expiredOrders }}</h4>
+                        <span>Expired</span>
                     </div>
                 </div>
             </div>
@@ -182,24 +184,10 @@
             <div class="card-body">
                 <div class="d-flex align-items-center">
                     <div>
-                        <h4 class="card-title">Yearly Comparison</h4>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="dl m-b-10">
-                            <select class="custom-select border-0 text-muted">
-                                <option value="0" selected="">2018</option>
-                                <option value="1">2015</option>
-                                <option value="2">2016</option>
-                                <option value="3">2017</option>
-                            </select>
-                        </div>
+                        <h4 class="card-title">Pendapatan Tahun {{ date('Y') }}</h4>
                     </div>
                 </div>
                 <div class="chart1 m-t-40" style="position: relative; height:250px;"></div>
-                <ul class="list-inline m-t-30 text-center font-12">
-                    <li class="list-inline-item text-muted"><i class="fa fa-circle text-info m-r-5"></i> This Year</li>
-                    <li class="list-inline-item text-muted"><i class="fa fa-circle text-light m-r-5"></i> Last Year</li>
-                </ul>
             </div>
         </div>
     </div>
@@ -210,7 +198,7 @@
 <!-- ============================================================== -->
 <!-- Recent comment and todo -->
 <!-- ============================================================== -->
-<div class="row">
+{{-- <div class="row">
     <!-- column -->
     <div class="col-lg-6">
         <div class="card">
@@ -406,4 +394,19 @@
         </div>
     </div>
 </div> --}}
+
+    <script>
+        window.orderStatus = {
+            paid: {{ $paidOrders }},
+            pending: {{ $pendingOrders }},
+            failed: {{ $failedOrders }},
+            expired: {{ $expiredOrders }}
+        };
+    </script>
+
+    <script>
+        window.revenueData = @json($revenueData);
+    </script>
+
+<script src="{{ asset('dist/js/pages/dashboards/dashboard2.js') }}"></script>
 @endsection

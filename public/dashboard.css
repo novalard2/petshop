@@ -1,0 +1,73 @@
+/* Order Status */
+.order-status-wrapper{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:20px;
+    margin-top:25px;
+}
+
+.order-status-item{
+    flex:1;
+    text-align:center;
+}
+
+.order-status-item i{
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+.order-status-item h4{
+    margin:8px 0 4px;
+    font-weight:700;
+}
+
+.order-status-item span{
+    display:block;
+    font-size:13px;
+    color:#666;
+}
+
+.income-value{
+    font-weight: 450;
+}
+
+/* HP */
+@media (max-width:768px){
+
+    .status{
+        display:flex;
+        justify-content:center;
+    }
+
+    .order-status-wrapper{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .order-status-item{
+        text-align:center;
+    }
+}
+
+@media (max-width:768px){
+
+    .chart1{
+        height:220px !important;
+    }
+
+    .chart1 .ct-label.ct-horizontal{
+        font-size:9px;
+    }
+
+    .chart1 .ct-label.ct-vertical{
+        align-items-start;
+        font-size:9px;
+    }
+
+    .chart1 .ct-chart-bar{
+        overflow:visible;
+    }
+
+}

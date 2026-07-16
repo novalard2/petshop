@@ -78,7 +78,7 @@ Route::middleware('auth')->group(function(){
     
 });
 
-// midtrans callback
+    // midtrans callback
     Route::post('/midtrans/callback', [OrderController::class, 'callback'])
     ->name('midtrans.callback');
     Route::match(['get', 'post'], '/tes-callback', function (Request $request) {
@@ -88,7 +88,7 @@ Route::middleware('auth')->group(function(){
     });
     
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // User Admin
 Route::middleware(['admin'])->group(function () {

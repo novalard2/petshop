@@ -1211,14 +1211,22 @@
 
     .search-btn{
         background: var(--navy);
-        color: white;
-        border: none;
-        padding: 10px 18px;
-        border-radius: 8px;
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all .2s ease;
+        color:#fff;
+        border:none;
+        padding:10px 18px;
+        border-radius:8px;
+        font-family:'DM Sans',sans-serif;
+        font-weight:600;
+        cursor:pointer;
+        transition:.2s;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .search-btn i{
+        font-size:18px;
     }
 
     .search-btn:hover{
@@ -3269,4 +3277,40 @@ main{
         to{
             transform: rotate(360deg);
         }
+    }
+
+
+    /* Load store section */
+    .load-more-wrapper{
+        display:flex;
+        justify-content:center;
+        margin-top:35px;
+
+    }
+
+    .load-more-btn{
+        padding:14px 26px;
+        border:none;
+        border-radius:12px;
+        background:#162E93;
+        color:#fff;
+        cursor:pointer;
+        font-weight:600;
+        transition:.3s;
+    }
+
+    .load-more-btn:hover{
+        background:#0d237a;
+    }
+
+    .all-product-message{
+        margin-top:25px;
+        text-align:center;
+        color:#1a237e;
+        font-weight:600;
+        font-size:16px;
+    }
+
+    .all-product-message i{
+        margin-right:6px;
     }

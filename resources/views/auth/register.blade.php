@@ -26,10 +26,16 @@
                             type="name"
                             name="name"
                             id="name"
+                            value="{{ old('name') }}"
                             required
                             class="peer block w-full border-0 border-b-2 border-gray-400 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none focus:border-[#2F2FE4]"
                             placeholder=" "
                         />
+                        @error('name')
+                            <div class="mt-1 text-sm text-red-500">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <label
                             for="name"
                             class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out
@@ -48,10 +54,16 @@
                             type="email"
                             name="email"
                             id="email"
+                            value="{{ old('email') }}"
                             required
                             class="peer block w-full border-0 border-b-2 border-gray-400 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none focus:border-[#2F2FE4]"
                             placeholder=" "
                         />
+                        @error('email')
+                            <div class="mt-1 text-sm text-red-500">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <label
                             for="email"
                             class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out
@@ -116,16 +128,16 @@
                             peer-[&:not(:placeholder-shown)]:scale-[0.8]">
                             Password Confirmation
                         </label>
-                        @error('password')
-                            <div class="text-red-500 text-sm">
-                                {{ $message }}
-                            </div>
+                       @error('password_confirmation')
+                        <div class="mt-1 text-sm text-red-500">
+                            {{ $message }}
+                        </div>
                         @enderror
-                    </div>
 
-                    <div class="mb-4 text-end">
-                        <input type="checkbox" id="showPassword">
-                        <label for="showPassword">Show Password</label>
+                        <div class="mt-4 text-end">
+                            <input type="checkbox" id="showPassword">
+                            <label for="showPassword">Show Password</label>
+                        </div>
                     </div>
                     
                         <script>
@@ -137,11 +149,6 @@
                             confirm.type = this.checked ? 'text' : 'password';
                         });
                         </script>
-
-                    <div class="mb-6 flex items-center justify-between">
-                        <!--Forgot password link-->
-                        <a href="#!">Forgot password?</a>
-                    </div>
 
                     <!-- Login button -->
                     <div class="text-center lg:text-left">
@@ -155,7 +162,7 @@
                         </button>
                     </div>
                 </form>
-                <div class="mb-6 text-center">
+                <div class="mb-6 mt-1 text-center">
                     <p>
                         Sudah Memiliki Akun?
                         <a href="{{ route('auth.login') }}"

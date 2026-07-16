@@ -116,11 +116,11 @@ $(function() {
         bindto: '.status',
         data: {
             columns: [
-                ['Pending', 55],
-                ['Failed', 10],
-                ['Success', 18],
+                ['Paid', window.orderStatus.paid],
+                ['Pending', window.orderStatus.pending],
+                ['Failed', window.orderStatus.failed],
+                ['Expired', window.orderStatus.expired],
             ],
-
             type: 'donut'
         },
         donut: {
@@ -138,7 +138,12 @@ $(function() {
                 //or hide: ['data1', 'data2']
         },
         color: {
-            pattern: ['#137eff','#5ac146','#8b5edd']
+            pattern: [
+                '#28a745', // Paid
+                '#ffc107', // Pending
+                '#dc3545', // Failed
+                '#6c757d'  // Expired
+            ]
         }
     });
 
@@ -146,21 +151,34 @@ $(function() {
     // Earnings
     // ============================================================== 
     new Chartist.Bar('.chart1', {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: [
+            'Jan','Feb','Mar','Apr','Mei','Jun',
+            'Jul','Agu','Sep','Okt','Nov','Des'
+        ],
         series: [
-            [5, 4, 5, 3, 12, 4, 15, 8, 10, 8, 7, 5],
-            [4, 10, 5, 4, 8, 3, 3, 4, 9, 7, 10, 4]
+            window.revenueData
         ]
     }, {
         stackBars: true,
         axisY: {
-            labelInterpolationFnc: function(value) {
-                return (value / 1) + 'k';
-            },
-            scaleMinSpace: 55
+           onlyInteger: true,
+            offset: 35,
+            scaleMinSpace: 50,
+            labelInterpolationFnc: function(value){
+                if(value >= 1000000){
+                    return (value/1000000) + " Jt";
+                }
+                if(value >= 1000){
+                    return (value/1000) + " Rb";
+                }
+                return value;
+            }
         },  
         axisX: {
-            showGrid: false
+            showGrid: false,
+            labelInterpolationFnc: function(value){
+            return value;
+            }
         },
         plugins: [
             Chartist.plugins.tooltip()
