@@ -1,59 +1,136 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🐾 PetShop Management System | Laravel 12
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-12-red?style=for-the-badge&logo=laravel)
+![GitHub last commit](https://img.shields.io/github/last-commit/novalard2/petshop?style=for-the-badge)
+![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue?style=for-the-badge&logo=mysql)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?style=for-the-badge&logo=bootstrap)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38BDF8?style=for-the-badge&logo=tailwindcss)
 
-## About Laravel
+PetShop Management System is a web-based application built with Laravel 12 to help manage pet store operations, including product management, online shopping, payment integration, and dashboard analytics.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Authentication (Login, Register & Forgot Password)
+- Product Management (CRUD)
+- Category Management (CRUD)
+- Animal Management (CRUD)
+- User Management (CRUD)
+- Shopping Cart
+- Checkout System
+- Midtrans Payment Gateway (Sandbox / Dummy)
+- Payment Callback (Webhook)
+- Order Management
+- Dashboard Analytics
+- Revenue Chart
+- Load More Products
+- Realtime Product Search
+- WhatsApp Reservation
+- Responsive Design
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Tech Stack
 
-## Learning Laravel
+- Laravel 12
+- PHP 8.2
+- MySQL
+- Bootstrap 5
+- Tailwind CSS
+- JavaScript
+- Midtrans Sandbox
+- Chartist.js
+- SweetAlert2
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🔧 Development Tools
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Git
+- GitHub
+- Visual Studio Code
+- XAMPP
+- ngrok (Webhook Testing)
+  
+## 📷 Screenshots
 
-## Laravel Sponsors
+### Landing Page
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+![Landing Page](screenshots/landingpage.png)
 
-### Premium Partners
+### Admin Dashboard
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+![Dashboard](screenshots/dashboard.png)
 
-## Contributing
+### Product Store
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![Store](screenshots/store.png)
 
-## Code of Conduct
+### Checkout
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![Checkout](screenshots/checkout.png)
 
-## Security Vulnerabilities
+### Order History
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![Orders](screenshots/orders.png)
 
-## License
+## ⚙️ Installation
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Clone this repository
+
+```bash
+git clone https://github.com/novalard2/petshop.git
+```
+
+Go to project folder
+
+```bash
+cd petshop
+```
+
+Install dependencies
+
+```bash
+composer install
+```
+
+Copy environment file
+
+```bash
+cp .env.example .env
+```
+> **Windows users: copy .env.example to .env manually if the cp command is unavailable.
+
+Generate application key
+
+```bash
+php artisan key:generate
+```
+
+Update your database configuration and Midtrans credentials in the `.env` file, then run:
+
+```bash
+php artisan migrate
+```
+
+Create a symbolic link for the storage directory
+
+```bash
+php artisan storage:link
+```
+
+Start the development server
+
+```bash
+php artisan serve
+```
+
+---
+
+## 📄 License
+
+This project was developed for learning and portfolio purposes.
+
+---
+
+## 👨‍💻 Developer
+
+**Noval Ardiansyah**
+
+GitHub: [github.com/novalard2](https://github.com/novalard2)
